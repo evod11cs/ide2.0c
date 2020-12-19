@@ -19,6 +19,7 @@ class Editor{
 
     setupAll(){
       this.div = document.createElement("div");
+      this.div.className = "divKing"
       this.textarea = document.createElement("textarea");
       this.number = document.createElement("div");
       this.textBar = document.createElement("span")
@@ -149,12 +150,6 @@ body{
 	color: rgba(0,0,0,0);
 }
 
-
-
-
-.tag{
-	color: green;
-}
 .active{
 	background-color: rgb(68,60,51);
 }
@@ -170,10 +165,10 @@ body{
         this.div.innerHTML = value
         let x = this.div.innerHTML
         if (this.type == "html"){
-        x = htmly(this.div.innerHTML)
+        x = htmly(this.div.innerHTML,this.div)
         }
         else if(this.type == "css"){
-          x = cssy(this.div.innerHTML)
+          x = cssy(this.div.innerHTML,this.div1)
         }
         
         this.div.innerHTML = x
@@ -291,7 +286,8 @@ body{
         this.number.style.visibility = "visible"
         this.textarea.style.visibility = "visible"
         this.div.style.visibility = "visible"
-        this.textBar.style.visibility = "visible"
+        //for some reason
+        this.textBar.style.visibility = "hidden"
       }
 
     }
